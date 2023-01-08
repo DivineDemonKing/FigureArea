@@ -6,10 +6,37 @@ using System.Threading.Tasks;
 
 namespace FigureArea
 {
-    internal class Triangle
+    public class Triangle : Figure
     {
+        public Triangle(double a, double b, double c)
+        {
+            A = a;
+            B = b;
+            C = c;
+        }
+
         public double A { get; set; }
         public double B { get; set; }
         public double C { get; set; }
+        public override double CalculateArea()
+        {
+            double halfPerimeter = (A + B + C) / 2;
+            double area = Math.Sqrt(halfPerimeter * (halfPerimeter - A) * (halfPerimeter - B) * (halfPerimeter - C));
+            return area;
+        }
+        public bool IsRightTriangle(Triangle triangle)
+        {
+            double[] sides = new double[] { triangle.A, triangle.B, triangle.C };
+            Array.Sort(sides);
+
+            if (Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) == Math.Pow(sides[2], 2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace FigureArea
 {
-    internal class Circle
+    public class Circle : Figure
     {
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
+        public override double CalculateArea()
+        {
+            double area = Math.PI * Math.Pow(Radius, 2);
+            return area;
+        }
         public double Radius { get; set; }
         public double Circumference { get; set; }
     }
