@@ -8,27 +8,20 @@ namespace FigureArea
 {
     public class Rectangle : Figure
     {
-        public Rectangle(double a, double b, double c, double d)
+        public Rectangle(double hight, double width)
         {
-            A = a;
-            B = b;
-            C = c;
-            D = d;
+            A = hight;
+            B = width;
+            C = hight;
+            D = width;
         }
         public override double CalculateArea()
         {
-            if (A == B)
-            {
-                return A * C;
-            }
-            else
-            {
-                return A * B;
-            }
+            return A * B;
         }
-        public double A { get; set; }
-        public double B { get; set; }
-        public double C { get; set; }
-        public double D { get; set; }
+        public double A { get; set; } //Левая Сторона, Высота
+        public double B { get; set; } //Верхняя сторона, Ширина
+        public double C { get; set; } //Правая сторона, Высота
+        public double D { get; set; } //Нижняя сторона, Ширина
     }
 }

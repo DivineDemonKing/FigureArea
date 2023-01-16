@@ -14,6 +14,7 @@ namespace FigureArea
         }
         public override double CalculateArea()
         {
+            //Стоит ли округлять значение на данном этапе или это лучше сделать на индивидуально выходе 
             double area = Math.PI * Math.Pow(Radius, 2);
             return area;
         }

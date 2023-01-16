@@ -21,12 +21,14 @@ namespace FigureArea
         public override double CalculateArea()
         {
             double halfPerimeter = (A + B + C) / 2;
+            //Стоит ли округлять значение на данном этапе или это лучше сделать на индивидуально выходе 
             double area = Math.Sqrt(halfPerimeter * (halfPerimeter - A) * (halfPerimeter - B) * (halfPerimeter - C));
             return area;
         }
         public bool IsRightTriangle(Triangle triangle)
         {
             double[] sides = new double[] { triangle.A, triangle.B, triangle.C };
+            //Сортирую чтобы не делать проверки какая из сторон больше
             Array.Sort(sides);
 
             if (Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) == Math.Pow(sides[2], 2))
